@@ -6,6 +6,7 @@ const allItems = [
   { id: "g", value: "grape" },
   { id: "p", value: "pear" },
 ];
+console.log(allItems)
 
 export default function App() {
   const [items, setItems] = React.useState(allItems); // review useState
