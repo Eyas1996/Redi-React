@@ -2,12 +2,13 @@ import React from "react";
 import { mySkills } from "./mySkills";
 
 export default function App() {
+  const [desc, setDesc] = React.useState();
+
   return (
     <div className="App">
       <h1>Welcome to my portfolio</h1>
       <h2>here is a list of my skills</h2>
-      {/* <p> yous skill description goes here </p> */}
-
+      <p> {desc} </p>
       <ul className="skills-list">
         {/* render a list of your skills here
           each skill should :
@@ -22,6 +23,19 @@ export default function App() {
           - add the class "skill-item" to your li to use the pre-defined CSS rules
           - do not forget to pass a unique key to your li 
         */}
+
+        {mySkills.map((skill, index) => {
+          return (
+            <li
+              key={index}
+              className="skill-item"
+              onClick={() => setDesc(skill.description)}
+            >
+              <img src={skill.img} alt={skill.name} />
+              {`${skill.name}`}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
