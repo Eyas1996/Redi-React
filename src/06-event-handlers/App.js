@@ -3,22 +3,39 @@ import React from "react";
 export default function App() {
   const [focus, setFocus] = React.useState();
   const [blur, setBlur] = React.useState();
+  const [msg, setMsg] = React.useState();
+  const [hover, setHover] = React.useState();
+
+  const onFocus = (e) => {
+    setFocus(e.target);
+  };
+
+  const onBlur = (e) => {
+    setFocus(null);
+    setBlur(e.target.value);
+  };
+
+  const onClick = () => {
+    setMsg("");
+    setBlur("");
+  };
 
   return (
     <div className="App">
-      <h1>Click me to clear the input</h1>
-      <h2>Hover me to log what is in the input to the console</h2>
+      <h1 onClick={onClick}>Click me to clear the input</h1>
+      <h2
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        Hover me to log what is in the input to the console
+      </h2>
       <input
-        onFocus={(e) => {
-          setFocus(e.target);
-        }}
-        onBlur={(e) => {
-          setFocus(null);
-          setBlur(e.target.value);
-        }}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        value={msg}
         placeholder="type something here to show in the box below"
       />
-
+      {setHover && console.log(hover)}
       <br />
       <br />
 
