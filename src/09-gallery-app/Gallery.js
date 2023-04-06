@@ -19,10 +19,16 @@ function Gallery() {
   let sculpture = sculptureList[index];
   return (
     <div className="d-flex flex-column align-items-center mx-auto w-50 pb5 pt-5">
-      <button className="mx-auto w-25 btn btn-primary mb-2" onClick={handleClick}>
+      <button
+        className="mx-auto w-25 btn btn-primary mb-2"
+        onClick={handleClick}
+      >
         Next
       </button>
-      <button className="mx-auto w-25 btn btn-success mb-4" onClick={handleClickPrevious}>
+      <button
+        className="mx-auto w-25 btn btn-success mb-4"
+        onClick={handleClickPrevious}
+      >
         Previous
       </button>
       <h2>
