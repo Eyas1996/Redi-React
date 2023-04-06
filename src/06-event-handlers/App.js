@@ -24,6 +24,7 @@ function App() {
 
       <div>
         {/* when the input is focused a message should be rendered : "user typing ..." */}
+        {/* {(isFocused && isFocused) || "user typing ..."} */}
         {isFocused ? "user typing ..." : null}
       </div>
 

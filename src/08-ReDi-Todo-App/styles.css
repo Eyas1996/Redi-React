@@ -1,0 +1,71 @@
+.App {
+  font-family: Nunito;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border: lightgray solid 1px;
+  border-radius: 10px;
+}
+.over25 {
+  background: green;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.focus {
+  background: pink;
+}
+
+.label {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.emoji {
+  align-self: center;
+  margin-left: 10px;
+}
+
+.label-wrapper {
+  font-size: 0.7em;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.complete {
+  text-decoration: line-through;
+  color: green;
+}
+
+.danger {
+  background: red;
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  height: 26px;
+  font-size: 12px;
+  border: none;
+  border-radius: 2px;
+  margin-left: 10px;
+  transition: all 100ms ease-in 0s;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
