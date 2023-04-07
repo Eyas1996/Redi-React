@@ -9,9 +9,9 @@ import "./index.css";
 // import App from "./05-list-keys/App"
 // import App from "./06-event-handlers/App"
 // import App from "./07-Portfolio-skills-list/App";
-// import App from "./08-ReDi-Todo-App/App"
+import App from "./08-ReDi-Todo-App/App"
 // import App from "./09-gallery-app/App";
-import App from "./10-Lifting-state/App"
+// import App from "./10-Lifting-state/App"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
