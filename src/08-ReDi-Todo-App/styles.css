@@ -46,7 +46,7 @@ li {
   color: green;
 }
 
-.danger {
+/* .danger {
   background: red;
   padding: 5px 10px;
   color: rgb(255, 255, 255);
@@ -58,9 +58,9 @@ li {
   margin-left: 10px;
   transition: all 100ms ease-in 0s;
   text-decoration: none;
-}
+} */
 
-.visually-hidden {
+/* .visually-hidden {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -68,4 +68,4 @@ li {
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
-}
+} */

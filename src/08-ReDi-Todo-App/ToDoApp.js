@@ -35,19 +35,40 @@ const defaultTodos = [
  * 4. Add todos
  * - Add a form & form input
  * - Add an "Add" button
- * - The use
- * r can enter a todo in the input and add it to the list by clicking the button or pressing enter
+ * - The user can enter a todo in the input and add it to the list by clicking the button or pressing enter
  * 5. Stretch
  * - While a user is typing if the todo already exists in the list add an error message for the user to let them know
  * - Add a counter of the remaining todos left that have not been completed yet
  */
 
 export const ToDoApp = () => {
-  const [todos, setTodos] = useState(defaultTodos);
+  const [todos, setTodos] = useState("");
+
+  const [checked, setChecked] = useState(false);
+
+
+  // to prevent the default form behavior of submitting
+  const handleSubmit = (e) => e.preventDefault();
+
+  const handleClick = () => setChecked(!checked);
+
+  const handleRemove = (e) => e.target.parentElement.remove();
+  
+  const handleAdd = () => {
+    let task = {
+      name: todos,
+      isComplete: false,
+      id: uuidv4(),
+    }
+    setTodos(defaultTodos.push(task))
+
+  };
+
+
   return (
     <div className="todoapp stack-large">
       <h1>ReDI Todo App</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2 className="label-wrapper">
           <label htmlFor="new-todo-input" className="label__lg">
             What needs to be done?
@@ -59,13 +80,36 @@ export const ToDoApp = () => {
           className="input input__lg"
           name="text"
           autoComplete="off"
+          onChange={e => setTodos(e.target.value)}
+          value={todos}
         />
-        <button type="submit" className="btn btn__primary btn__lg">
+        <button onClick={handleAdd} type="submit" className="btn btn-outline-primary btn-sm mx-1">
           Add
         </button>
       </form>
       <h2 id="list-heading">3 tasks remaining</h2>
-      <li key={123}>
+      {defaultTodos.map(function (task) {
+        return (
+          <li key={task.id}>
+            <input
+              onClick={handleClick}
+              id={task.id}
+              type="checkbox"
+              checked={checked}
+            />
+            <label
+              className={checked ? "complete label" : "label"}
+              htmlFor={task.id}
+            >
+              {task.name}
+            </label>
+            <button onClick={handleRemove} type="button" className="btn btn-outline-danger">
+              Delete <span className="visually-hidden">Eat</span>
+            </button>
+          </li>
+        );
+      })}
+      {/* <li key={123}>
         <input id={123} type="checkbox" checked={false} />
         <label className="label" htmlFor={123}>
           Sample To Do
@@ -73,7 +117,7 @@ export const ToDoApp = () => {
         <button type="button" className="danger">
           Delete <span className="visually-hidden">Eat</span>
         </button>
-      </li>
+      </li> */}
     </div>
   );
 };
