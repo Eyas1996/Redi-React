@@ -14,7 +14,8 @@ import "./index.css";
 // import App from "./10-Lifting-state/App"
 // import App from './11-rendering-lists-recipe-app/App';
 // import App from "./12-Events-color-changer/App";
-import App from "./13-mouse-position/App";
+// import App from "./13-mouse-position/App";
+import App from "./14-uncontrolled-form/App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
