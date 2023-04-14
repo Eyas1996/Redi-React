@@ -12,19 +12,19 @@ export default function Form({ onSubmit }) {
     <form className="myForm" onSubmit={handleSubmit}>
       Your form elements here
       <div>
-        <label for="name">
+        <label htmlFor="name">
           Name
           <input type="text" id="name" name="name" />
         </label>
       </div>
       <div>
-        <label for="email">
+        <label htmlFor="email">
           Email
           <input type="email" id="email" name="email" />
         </label>
       </div>
       <div>
-        <label for="message">
+        <label htmlFor="message">
           {" "}
           Message
           <textarea type="text" name="message" id="message"></textarea>

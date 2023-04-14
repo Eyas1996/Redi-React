@@ -7,8 +7,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Uncontrolled Form</h1>
-      <Form onSubmit={setFormData} />
+      <h1>Controlled Form</h1>
+      <Form setFormData={setFormData} />
       <div>{JSON.stringify(formsData, null, 2)}</div>
     </div>
   );
