@@ -12,7 +12,8 @@ import "./index.css";
 // import App from "./08-ReDi-Todo-App/App"
 // import App from "./09-gallery-app/App";
 // import App from "./10-Lifting-state/App"
-import App from './11-rendering-lists-recipe-app/App';
+// import App from './11-rendering-lists-recipe-app/App';
+import App from "./12-Events-color-changer/App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
